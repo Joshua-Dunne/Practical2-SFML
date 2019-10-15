@@ -42,6 +42,10 @@ void Game::update()
 		npc->update();
 	}
 
+	if (player->playerSprite.getGlobalBounds().intersects(npc->npcSprite.getGlobalBounds()))
+	{
+		std::cout << "Player is touching NPC!" << std::endl;
+	}
 }
 
 void Game::draw()

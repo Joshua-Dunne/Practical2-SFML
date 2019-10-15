@@ -17,6 +17,15 @@ void Player::initialize()
 void Player::update()
 {
 	//cout << "Player updating" << endl;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		playerSprite.move(sf::Vector2f{5,0});
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+		playerSprite.move(sf::Vector2f{ -5,0 });
+	}
 }
 void Player::draw(sf::RenderWindow* t_window)
 {
