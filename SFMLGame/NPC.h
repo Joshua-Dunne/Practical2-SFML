@@ -13,6 +13,9 @@ public:
 	~NPC();
 	void initialize();
 	void update();
-	void draw();
+	void draw(sf::RenderWindow* t_window);
+
+	sf::Texture npcTex;
+	sf::Sprite npcSprite;
 };
 #endif

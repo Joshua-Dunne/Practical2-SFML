@@ -13,6 +13,9 @@ public:
 	~Player();
 	void initialize();
 	void update();
-	void draw();
+	void draw(sf::RenderWindow* t_window);
+
+	sf::Texture playerTex;
+	sf::Sprite playerSprite;
 };
 #endif

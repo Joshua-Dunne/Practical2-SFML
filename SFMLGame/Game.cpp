@@ -5,12 +5,15 @@ using namespace sf;
 
 sf::RenderWindow* window = new RenderWindow(sf::VideoMode(800, 600), "Launching...");;
 
-Game::Game(){}
+Game::Game() : npc{ nullptr }, player{ nullptr } {}
 
 void Game::initialize()
 {
 	player = new Player();
 	npc = new NPC();
+
+	player->initialize();
+	npc->initialize();
 
 	window->setSize(sf::Vector2u(640, 480));
 	window->setTitle("Game");
@@ -45,8 +48,8 @@ void Game::draw()
 {
 	window->clear();
 	//window->draw(shape);
-	player->draw();
-	npc->draw();
+	player->draw(window);
+	npc->draw(window);
 	window->display();
 }
 
